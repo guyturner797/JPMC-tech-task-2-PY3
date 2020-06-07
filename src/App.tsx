@@ -42,12 +42,12 @@ class App extends Component<{}, IState> {
    */
   getDataFromServer() {
     let x = 0;
-    constant interval = setInterval(() => {
+    const interval = setInterval(() => {
       DataStreamer.getData((serverResponds: ServerRespond[]) => {
         // As soon as data is sent back from the server, the graph is set to show
         this.setState({
            data: serverResponds,
-           showGraph: true;
+           showGraph: true,
          });
       });
       x++;  // after each loop iteration, x is incremented by 1
